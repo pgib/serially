@@ -1,0 +1,33 @@
+<% form_for(@serial) do |f| %>
+
+<table border="0">
+ <tr>
+  <td><%= f.label :serial %>:</td>
+  <td><%= h @serial.serial %></td>
+ </tr>
+
+ <tr>
+  <td><%= f.label :product %>:</td>
+  <td><%= h @serial.product %></td>
+ </tr>
+
+ <tr>
+  <td><%= f.label :additional_code %>:</td>
+  <td><%= h @serial.additional_code %></td>
+ </tr>
+
+ <tr>
+  <td><%= f.label :registered_to %>:</td>
+  <td><%= h @serial.registered_to %></td>
+ </tr>
+
+ <tr>
+  <td><%= f.label :reg_date %>:</td>
+  <td><%= h @serial.reg_date %></td>
+ </tr>
+</table>
+
+<% end %>
+
+<%= link_to 'Edit', edit_serial_path(@serial) %> |
+<%= link_to 'Back', serials_path %>

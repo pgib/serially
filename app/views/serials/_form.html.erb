@@ -1,0 +1,34 @@
+<% form_for(@serial) do |f| %>
+  <%= f.error_messages %>
+
+<table border="0">
+ <tr>
+  <td><%= f.label :serial %>:</td>
+  <td><%= f.text_field :serial %></td>
+ </tr>
+
+ <tr>
+  <td><%= f.label :product %>:</td>
+  <td><%= f.text_field :product %></td>
+ </tr>
+
+ <tr>
+  <td><%= f.label :additional_code %>:</td>
+  <td><%= f.text_field :additional_code %></td>
+ </tr>
+
+ <tr>
+  <td><%= f.label :registered_to %>:</td>
+  <td><%= f.text_field :registered_to %></td>
+ </tr>
+
+ <tr>
+  <td><%= f.label :reg_date %>:</td>
+  <td><%= f.text_field :reg_date %></td>
+ </tr>
+</table>
+
+<%= f.submit "Save" %>
+
+<% end %>
+

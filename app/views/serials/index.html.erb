@@ -1,0 +1,31 @@
+<h1>Listing serials</h1>
+
+<div id="status">
+<%= image_tag("spinner.gif",
+              :align => "absmiddle",
+              :border => 0,
+              :id => "spinner",
+              :style =>"display: none;" ) %>
+</div>
+
+<div class="search">
+<input id="search" name="search" type="search" value="">
+<%= observe_field 'search',
+         :frequency => 0.5, 
+         :update => 'results',
+         :before => "Element.show('spinner')",
+         :success => "Element.hide('spinner')",
+         :url => 
+         { :controller => 'serials', :action=> 'search' }, 
+         :with => "'search=' + escape(value)" %>
+</div>
+
+<div id="results">
+<%= render :partial => "results" %>
+</div>
+
+<div class="add"><%= link_to 'Add serial', new_serial_path %></div>
+
+
+
+
