@@ -1,29 +1,35 @@
-<table class="list">
-  <tr>
-    <th>Product</th>
-    <th>Serial</th>
-    <th>Additional code</th>
-    <th>Registered to</th>
-    <th>Reg date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% if @serials.empty? then %>
 
-<% for serial in @serials %>
-  <tr>
-    <td><%=h serial.product %></td>
-    <td><%=h serial.serial %></td>
-    <td><%=h serial.additional_code %></td>
-    <td><%=h serial.registered_to %></td>
-    <td><%=h serial.reg_date %></td>
-    <td><%= link_to 'Show', serial %></td>
-    <td><%= link_to 'Edit', edit_serial_path(serial) %></td>
-    <td><%= link_to 'Destroy', serial, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<p>Sorry, no serials found.</p>
+
+<% else %>
+	<table class="list">
+	  <tr>
+	    <th>Product</th>
+	    <th>Serial</th>
+	    <th>Additional code</th>
+	    <th>Registered to</th>
+	    <th>Reg date</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+
+	<% for serial in @serials %>
+	  <tr>
+	    <td><%=h serial.product %></td>
+	    <td><%=h serial.serial %></td>
+	    <td><%=h serial.additional_code %></td>
+	    <td><%=h serial.registered_to %></td>
+	    <td><%=h serial.reg_date %></td>
+	    <td><%= link_to 'Show', serial %></td>
+	    <td><%= link_to 'Edit', edit_serial_path(serial) %></td>
+	    <td><%= link_to 'Destroy', serial, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+	<div id="pager">
+	<%= will_paginate(@serials) %>
+	</div>
 <% end %>
-</table>
-
-<div id="pager">
-<%= will_paginate(@serials) %>
-</div>
