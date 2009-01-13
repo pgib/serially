@@ -2,6 +2,10 @@ Over the years, I've manually managed a database table for all of the serial num
 
 This application is my foray into building apps the Rails way (and to Ruby itself). I'm specifically interested in easily and quickly finding records, and making it easy to add new serial numbers to my personal database.
 
+This application requires the will_paginate gem (http://wiki.github.com/mislav/will_paginate/installation). To install it, run:
+
+rake gems:install
+
 That all said, you'll have to forgive me if I've made any newbie mistakes or somewhat. I'm sure they will eventually be identified and corrected as I become intitmately familiar with Ruby and Rails.
 
 Patrick
