@@ -1,3 +1,5 @@
+<h1><%= h @serial.product %></h1>
+
 <% form_for(@serial) do |f| %>
 
 <table border="0">
@@ -6,25 +8,25 @@
   <td><%= h @serial.serial %></td>
  </tr>
 
- <tr>
-  <td><%= f.label :product %>:</td>
-  <td><%= h @serial.product %></td>
- </tr>
-
+ <% if !@serial.additional_code.empty? then %>
  <tr>
   <td><%= f.label :additional_code %>:</td>
   <td><%= h @serial.additional_code %></td>
  </tr>
+ <% end %>
 
+ <% if !@serial.registered_to.empty? then %>
  <tr>
   <td><%= f.label :registered_to %>:</td>
   <td><%= h @serial.registered_to %></td>
  </tr>
+ <% end %>
 
  <tr>
   <td><%= f.label :reg_date %>:</td>
   <td><%= h @serial.reg_date %></td>
  </tr>
+
 </table>
 
 <% end %>
