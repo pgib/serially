@@ -5,3 +5,4 @@ log/*
 log/*.log
 public/system/*
 public/system/*.
+serially-rails_*
