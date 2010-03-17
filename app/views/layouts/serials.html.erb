@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Serials: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "serially" %>
+</head>
+<body>
+
+<div id="site">
+
+<div id="header">
+  <div style="float:right;padding-right:4px">
+    <span id="s0">0</span><span id="s1">1</span><span id="s2">2</span><span id="s3">3</span><span id="s4">4</span> -
+    <span id="s5">5</span><span id="s6">6</span><span id="s7">7</span><span id="s8">8</span><span id="s9">9</span> -
+    <span id="s10">0</span><span id="s11">1</span><span id="s12">2</span><span id="s13">3</span><span id="s14">4</span> -
+    <span id="s15">5</span><span id="s16">6</span><span id="s17">7</span><span id="s18">8</span><span id="s19">9</span>
+  </div>
+  Serially <div style="font-size:50%;color:#999">Keeping your serials safe since 2008</div>
+</div>
+
+<% if flash[:notice] %><div class="flash green"><%= flash[:notice] %></div><% end %>
+
+<%= yield  %>
+
+<div style="clear:both"></div>
+
+</div>
+</body>
+</html>

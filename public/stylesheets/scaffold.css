@@ -1,15 +1,30 @@
 body
 {
-	background-color: #eee; color: #333;
+	background-color: #002e41;
+	color: #333;
 }
 
 #site
 {
 	width: 800px;
 	padding: 48px;
-	border: 1px solid #ddd;
+	border: 3px solid #ddd;
 	background-color: #fff;
 	margin: 48px auto;
+	-webkit-border-top-left-radius: 18px;
+	-webkit-border-top-right-radius: 18px;
+	-webkit-border-bottom-left-radius: 18px;
+	-webkit-border-bottom-right-radius: 18px;
+	-webkit-box-shadow: 2px 2px 200px #000;
+}
+
+#header
+{
+	font-size: 27px;
+	font-weight: bold;
+	font-style: italic;
+	margin-bottom: 32px;
+	line-height: 27px;
 }
 
 body, p, ol, ul, td
@@ -35,6 +50,7 @@ th
 {
 	text-align: left;
 	white-space: nowrap;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(230, 230, 230)), to(rgb(250, 250, 250)));
 }
 
 div#site > div.flash + h1,
@@ -55,7 +71,7 @@ table
 
 table td, th
 {
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 	padding: 3px;
 }
 
@@ -133,19 +149,30 @@ div.add
 {
 	float: right;
 	width: 70px;
-	border: 1px solid #ddd;
+	border: 1px solid #ccc;
 	padding: 5px;
 	text-align: center;
 	margin-top: 8px;
 	background-color: #eee;
-	font-size: 11px;
+	font-size: 12px;
+	font-weight: bold;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(250, 250, 250)), to(rgb(230, 230, 230)));
+	text-shadow: 1px 1px 1px #fff;
+
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+
+	-webkit-box-shadow: 1px 1px 3px #ccc;
 }
 
 div.add:hover
 {
-	background-color: #ddd;
-	border-color: #ccc;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(240, 240, 240)), to(rgb(220, 220, 220)));
+	border-color: #bbb;
 	cursor: pointer;
+	color: black;
 }
 
 div.add a

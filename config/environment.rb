@@ -5,7 +5,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -59,8 +59,8 @@ Rails::Initializer.run do |config|
     :secret      => '3b0e999638708575ae07c83f831e3455fa7762e1e73bda0bd9c275c1ac5d9bef6e0fd12203be8bc40b587b3e4cc757a1cde8ca835bd79493b61c6803308ebd78'
   }
 
-  config.gem 'mislav-will_paginate', :version => '~> 2.2', :lib => 'will_paginate', 
-    :source => 'http://gems.github.com'
+  # config.gem 'mislav-will_paginate', :version => '~> 2.2', :lib => 'will_paginate', 
+  #   :source => 'http://gems.github.com'
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information

@@ -44,6 +44,7 @@ module Rails
     def load_initializer
       require "#{RAILS_ROOT}/vendor/rails/railties/lib/initializer"
       Rails::Initializer.run(:install_gem_spec_stubs)
+      Rails::GemDependency.add_frozen_gem_path
     end
   end
 
@@ -81,8 +82,8 @@ module Rails
       end
 
       def load_rubygems
+        min_version = '1.3.2'
         require 'rubygems'
-        min_version = '1.3.1'
         unless rubygems_version >= min_version
           $stderr.puts %Q(Rails requires RubyGems >= #{min_version} (you have #{rubygems_version}). Please `gem update --system` and try again.)
           exit 1
@@ -101,6 +102,24 @@ module Rails
         def read_environment_rb
           File.read("#{RAILS_ROOT}/config/environment.rb")
         end
+    end
+  end
+end
+
+class Rails::Boot
+  def run
+    load_initializer
+    extend_environment
+    Rails::Initializer.run(:set_load_path)
+  end
+ 
+  def extend_environment
+    Rails::Initializer.class_eval do
+      old_load = instance_method(:load_environment)
+      define_method(:load_environment) do
+        Bundler.require :default, Rails.env
+        old_load.bind(self).call
+      end
     end
   end
 end
